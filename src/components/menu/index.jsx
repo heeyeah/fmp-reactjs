@@ -1,45 +1,77 @@
-import React from "react";
-import "./index.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
+import styled from "styled-components";
 // import "./index.scss";
 
 const Container = styled.div`
-  height: 500px;
+  height: 100%;
   background-color: lightgreen;
 `;
 
-export const MenuNav = () => {
+export const MenuNav = (props) => {
+  console.log("props", props);
+
+  const [text, setText] = useState("");
+
   return (
     <Container>
-      Menu!
+      Current Menu={text}
       <ul>
-          <li>
-            <Link to="/">
-              <button>Home</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/about">
-              <button>about</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/chatBot">
-              <button>chatBot</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/history">
-              <button>history</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/answer">
-              <button>answer</button>
-            </Link>
-          </li>
-        </ul>
+        <li>
+          <Link to="/">
+            <button
+              onClick={() => {
+                setText("HOME!!!")
+                props.isHome(true)
+              }}
+            >
+              Home
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/about">
+            <button
+              onClick={() => {
+                setText("ABOUT!!!")
+                props.isHome(false);
+              }}
+            >
+              about
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/chatBot">
+          <button
+              onClick={() => {
+                setText("CHATBOT!!!")
+                props.isHome(false);
+              }}
+            >chatBot</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/history">
+          <button
+              onClick={() => {
+                setText("HISTORY!!!")
+                props.isHome(false);
+              }}
+            >history</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/answer">
+          <button
+              onClick={() => {
+                setText("ANSWER!!!")
+                props.isHome(false);
+              }}
+            >answer</button>
+          </Link>
+        </li>
+      </ul>
     </Container>
   );
 };

@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { MenuNav } from "./components/menu";
@@ -21,22 +21,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function MainGrid(props) {
+  const isHome = props.isHome;
+  console.log("MainGrid 상태", isHome);
+  
+  if (isHome) {
+    return null;
+  }
+
+  return (
+      <Header />
+  );
+}
+
 function App() {
-  const classes = useStyles;
+  const [home, isHome] = useState(false);
+
   return (
     <Router>
-      <Header />
-      <hr />
       <Grid container spacing={1}>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>
-            <MenuNav />
-          </Paper>
+        <Grid item xs={3} sm={3} md={3} lg={2}>
+          <MenuNav isHome={(fromMenu) => isHome(fromMenu)} />
         </Grid>
-        <Grid item xs={9}>
-          <Paper className={classes.paper}>
-            <Main />
-          </Paper>
+
+        <Grid item xs={9} sm={9} md={9} lg={10}>
+          <MainGrid isHome={home} />
+          <Main />
         </Grid>
       </Grid>
       <Footer />
