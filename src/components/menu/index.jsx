@@ -1,77 +1,52 @@
+import "./index.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-// import "./index.scss";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import HomeIcon from '@material-ui/icons/Home';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import AddCommentIcon from '@material-ui/icons/AddComment';
 
-const Container = styled.div`
-  height: 100%;
-  background-color: lightgreen;
-`;
 
-export const MenuNav = (props) => {
-  console.log("props", props);
+function ListItemLink(props) {
+  const { icon, primary, to } = props;
 
-  const [text, setText] = useState("");
+  const CustomLink = React.useMemo(
+    () =>
+      React.forwardRef((linkProps, ref) => (
+        <Link ref={ref} to={to} {...linkProps} />
+      )),
+    [to],
+  );
 
   return (
-    <Container>
-      Current Menu={text}
-      <ul>
-        <li>
-          <Link to="/">
-            <button
-              onClick={() => {
-                setText("HOME!!!")
-                props.isHome(true)
-              }}
-            >
-              Home
-            </button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/about">
-            <button
-              onClick={() => {
-                setText("ABOUT!!!")
-                props.isHome(false);
-              }}
-            >
-              about
-            </button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/chatBot">
-          <button
-              onClick={() => {
-                setText("CHATBOT!!!")
-                props.isHome(false);
-              }}
-            >chatBot</button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/history">
-          <button
-              onClick={() => {
-                setText("HISTORY!!!")
-                props.isHome(false);
-              }}
-            >history</button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/answer">
-          <button
-              onClick={() => {
-                setText("ANSWER!!!")
-                props.isHome(false);
-              }}
-            >answer</button>
-          </Link>
-        </li>
-      </ul>
-    </Container>
+    <li>
+      <ListItem button component={CustomLink}>
+        <ListItemIcon>{icon}</ListItemIcon>
+        <ListItemText primary={primary} />
+      </ListItem>
+    </li>
+  );
+}
+
+export const MenuNav = () => {
+  
+  return (
+    <div className="root">
+      <div className="title">
+      <h3 >WHAT ERROR IS THIS?</h3>
+      </div>
+      <List component="nav" aria-label="main mailbox folders">
+        <ListItemLink to="/" primary="HOME" icon={<HomeIcon/>}></ListItemLink>
+        <ListItemLink to="/about" primary="사용법" icon={<MenuBookIcon/>}></ListItemLink>
+        <ListItemLink to="/chatBot" primary="챗봇" icon={<QuestionAnswerIcon/>}></ListItemLink>
+        <ListItemLink to="/history" primary="히스토리" icon={<TimelineIcon/>}></ListItemLink>
+        <ListItemLink to="/answer" primary="답변등록" icon={<AddCommentIcon/>}></ListItemLink>
+      </List>
+    </div>
   );
 };

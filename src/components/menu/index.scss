@@ -1,0 +1,13 @@
+@import "../../styles/code.scss";
+
+.root {
+  height: $fmp-common-height;
+  width: "100%";
+  background-color: rgb(146, 197, 255);
+  align-items: center;
+
+  .title {
+    padding-top: 1em;
+    text-align: center;
+  }
+}

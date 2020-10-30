@@ -1,21 +1,16 @@
 import React from "react";
+import "./index.scss";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
-import Home from "../Home";
-import About from "../About";
-import ChatBot from "../ChatBot";
-import History from "../History";
-import Answer from "../Answer";
-
-const Container = styled.div`
-  height: 500px;
-  background-color: yellow;
-`;
+import Home from "../../pages/Home";
+import About from "../../pages/About";
+import ChatBot from "../../pages/ChatBot";
+import History from "../../pages/History";
+import Answer from "../../pages/Answer";
 
 export const Main = () => {
   return (
-    <Container>
-      Main
+    <div className="main-frame">
       <main>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
@@ -23,6 +18,6 @@ export const Main = () => {
         <Route path="/history" component={History} />
         <Route path="/answer" component={Answer} />
       </main>
-    </Container>
+      </div>
   );
 };

@@ -1,9 +1,8 @@
 import React from "react";
-import "./index.css";
-// import "./index.scss";
+import "./index.scss";
 
-export const Header = () => (
+export const Header = (props) => (
   <h1 className="home-header">
-      What error is this?
+      {props.header}
   </h1>
 );
