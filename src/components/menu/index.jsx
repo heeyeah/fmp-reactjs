@@ -10,6 +10,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import AddCommentIcon from '@material-ui/icons/AddComment';
+import { Menu, MenuItem } from "@material-ui/core";
 
 
 function ListItemLink(props) {
@@ -38,7 +39,10 @@ export const MenuNav = () => {
   return (
     <div className="root">
       <div className="title">
-      <h3 >WHAT ERROR IS THIS?</h3>
+        
+        {/* <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit'}}> */}
+        <h3 >WHAT ERROR IS THIS?</h3>
+        {/* </Link> */}
       </div>
       <List component="nav" aria-label="main mailbox folders">
         <ListItemLink to="/" primary="HOME" icon={<HomeIcon/>}></ListItemLink>

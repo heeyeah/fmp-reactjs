@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.scss";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
 import Home from "../../pages/Home";
@@ -8,9 +7,12 @@ import ChatBot from "../../pages/ChatBot";
 import History from "../../pages/History";
 import Answer from "../../pages/Answer";
 
+
 export const Main = () => {
   return (
-    <div className="main-frame">
+    <div style={{
+        backgroundColor: `$theme-home-background`,
+    }}>
       <main>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />

@@ -3,9 +3,9 @@
 .root {
   height: $fmp-common-height;
   width: "100%";
-  background-color: rgb(146, 197, 255);
+  background-color: $theme-menu-nav;
   align-items: center;
-
+  box-sizing: border-box;
   .title {
     padding-top: 1em;
     text-align: center;
