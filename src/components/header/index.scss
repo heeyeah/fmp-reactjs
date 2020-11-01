@@ -1,12 +1,35 @@
 @import "../../styles/code.scss";
 
 .home-header {
-  margin-top: 0;
+  height: 50px;
+  box-sizing: border-box;
+  margin: 0;
   padding: 10px;
   border-bottom: none;
-  font-weight: 300;
-  font-size: 30px;
+  font-weight: 340;
+  font-size: 25px;
   color: white;
   letter-spacing: -2px;
   background: $theme-header-background;
+}
+
+.title-header {
+  height: 50px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  border-bottom: none;
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+  letter-spacing: -2px;
+  text-align: center;
+  background: $theme-title-background;
+}
+
+.hidden {
+  height: 50px;
+  box-sizing: border-box;
+  margin: 0;
+  background: $theme-home-background;
 }

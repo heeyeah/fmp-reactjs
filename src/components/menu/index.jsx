@@ -11,6 +11,7 @@ import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import AddCommentIcon from '@material-ui/icons/AddComment';
 import { Menu, MenuItem } from "@material-ui/core";
+import { Header } from "../header";
 
 
 function ListItemLink(props) {
@@ -37,20 +38,18 @@ function ListItemLink(props) {
 export const MenuNav = () => {
   
   return (
+    <>
+    <Header header="CLOUD1234" isTitle > </Header>
     <div className="root">
-      <div className="title">
-        
-        {/* <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit'}}> */}
-        <h3 >WHAT ERROR IS THIS?</h3>
-        {/* </Link> */}
-      </div>
-      <List component="nav" aria-label="main mailbox folders">
+      <List component="nav" aria-label="main mailbox folders"
+      style={{paddingTop: '150px'}}>
         <ListItemLink to="/" primary="HOME" icon={<HomeIcon/>}></ListItemLink>
         <ListItemLink to="/about" primary="사용법" icon={<MenuBookIcon/>}></ListItemLink>
         <ListItemLink to="/chatBot" primary="챗봇" icon={<QuestionAnswerIcon/>}></ListItemLink>
         <ListItemLink to="/history" primary="히스토리" icon={<TimelineIcon/>}></ListItemLink>
         <ListItemLink to="/answer" primary="답변등록" icon={<AddCommentIcon/>}></ListItemLink>
       </List>
-    </div>
+      
+    </div></>
   );
 };

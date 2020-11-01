@@ -1,8 +1,14 @@
 import React from "react";
-
+import { Header } from "../components/header";
+import { Container } from "@material-ui/core";
 function ChatBot() {
   return (
-    <div> ChatBot 넣을 자리!</div>
+    <>
+      <Header header="챗봇" />
+      <Container>
+        챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇챗봇
+      </Container>
+    </>
   );
 }
 
