@@ -1,0 +1,14 @@
+@import "../../styles/code.scss";
+
+.login {
+  height: $fmp-common-height;
+  box-sizing: border-box;
+  padding: 5em;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  .button {
+      padding: 1em;
+  }
+}

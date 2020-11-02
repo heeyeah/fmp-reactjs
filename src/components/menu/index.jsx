@@ -43,7 +43,7 @@ export const MenuNav = () => {
     <div className="root">
       <List component="nav" aria-label="main mailbox folders"
       style={{paddingTop: '150px'}}>
-        <ListItemLink to="/" primary="HOME" icon={<HomeIcon/>}></ListItemLink>
+        <ListItemLink to="/home" primary="HOME" icon={<HomeIcon/>}></ListItemLink>
         <ListItemLink to="/about" primary="사용법" icon={<MenuBookIcon/>}></ListItemLink>
         <ListItemLink to="/chatBot" primary="챗봇" icon={<QuestionAnswerIcon/>}></ListItemLink>
         <ListItemLink to="/history" primary="히스토리" icon={<TimelineIcon/>}></ListItemLink>

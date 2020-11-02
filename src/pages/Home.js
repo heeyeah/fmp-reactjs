@@ -17,12 +17,13 @@ function Home() {
         WELCOME TO <br />
         ✨What error is this?✨
         <div>
-          <Link to="/about">
-            <Button className="button">사용법</Button>
-          </Link>
-          <Link to="/chatBot">
-            <Button className="button">시작</Button>
-          </Link>
+          <Button className="button" component={Link} to={"/about"}>
+            사용법
+          </Button>
+
+          <Button className="button" component={Link} to={"/chatBot"}>
+            시작
+          </Button>
         </div>
       </div>
     </>
