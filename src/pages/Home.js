@@ -6,7 +6,8 @@ import CloudQueueIcon from "@material-ui/icons/CloudQueue";
 import { Header } from "../components/header";
 import "../styles/page.scss";
 
-function Home() {
+function Home(props) {
+  console.log('here?', props.loginId)
   return (
     <>
       <Header hidden></Header>

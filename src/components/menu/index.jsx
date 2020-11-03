@@ -10,7 +10,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import AddCommentIcon from '@material-ui/icons/AddComment';
-import { Menu, MenuItem } from "@material-ui/core";
+import { Box, Menu, MenuItem } from "@material-ui/core";
 import { Header } from "../header";
 
 
@@ -35,21 +35,23 @@ function ListItemLink(props) {
   );
 }
 
-export const MenuNav = () => {
-  
+export const MenuNav = (props) => {
+
+  let loginId = props.loginId;
+  let profileText = (loginId) ? 'Hello, ' + loginId : 'XD';
+
   return (
     <>
-    <Header header="CLOUD1234" isTitle > </Header>
+    <Header header="에러해결해Dream" isTitle > </Header>
     <div className="root">
-      <List component="nav" aria-label="main mailbox folders"
-      style={{paddingTop: '150px'}}>
+      <Box className="profile">{profileText}</Box>
+      <List component="nav" aria-label="main mailbox folders">
         <ListItemLink to="/home" primary="HOME" icon={<HomeIcon/>}></ListItemLink>
         <ListItemLink to="/about" primary="사용법" icon={<MenuBookIcon/>}></ListItemLink>
         <ListItemLink to="/chatBot" primary="챗봇" icon={<QuestionAnswerIcon/>}></ListItemLink>
         <ListItemLink to="/history" primary="히스토리" icon={<TimelineIcon/>}></ListItemLink>
         <ListItemLink to="/answer" primary="답변등록" icon={<AddCommentIcon/>}></ListItemLink>
       </List>
-      
     </div></>
   );
 };

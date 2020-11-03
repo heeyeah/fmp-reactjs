@@ -1,11 +1,9 @@
-import React from "react";
-import { Link, Route, useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { Main } from "../main";
-
 import "./index.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,9 +15,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Login = () => {
+export const Login = (props) => {
+  // let history = useHistory();
   const classes = useStyles();
-  const history = useHistory();
+  const [loginId, setLoginId] = useState("Hello World");
+
+  const handleChange = (e) => {
+    setLoginId(() => e.target.value);
+  };
+
+  const handleClick = () => {
+    props.callbackLoginId(loginId);
+  };
 
   return (
     <Container className="login">
@@ -31,7 +38,8 @@ export const Login = () => {
               required
               id="standard-required"
               label="Shinhan ID"
-              defaultValue="Hello World"
+              value={loginId}
+              onChange={handleChange}
             />
           </Container>
           <Container>
@@ -40,15 +48,20 @@ export const Login = () => {
               label="Password"
               type="password"
               autoComplete="current-password"
+              
             />
           </Container>
         </div>
       </form>
       <Container className="button">
-        <Button color="secondary" component={Link} to={"/home"}>
+        <Button
+          color="secondary"
+          component={Link}
+          to={"/home"}
+          onClick={handleClick}
+        >
           LOGIN
         </Button>
-        <Route path="/home" component={Main} />
       </Container>
     </Container>
   );
