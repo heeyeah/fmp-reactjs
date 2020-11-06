@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Footer } from "./components/footer";
 import { Login } from "./components/login";
 import { Main } from "./components/main";
+import './App.scss';
 
 function App() {
   const [loginId, setLoginId] = useState(null);
