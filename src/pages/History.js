@@ -33,11 +33,11 @@ function History() {
     <>
       <Header header="히스토리"></Header>
       <Container className="history">
-        <GridList cols={4}>
+        <GridList cols={3}>
           {nums.map(n => {
             return (
               <GridListTile key={n}>
-                <HistoryCard header="ORA-1331" content="내용" date="2020-10-10 13:00"/>        
+                <HistoryCard header="ORA-1331" content="내용" date={new Date().toLocaleString()}/>        
               </GridListTile>
             )
           })}

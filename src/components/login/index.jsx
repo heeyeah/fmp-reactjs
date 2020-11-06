@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
-import { Container } from "@material-ui/core";
+import { Container, IconButton, Modal } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+
 import "./index.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +25,16 @@ const useStyles = makeStyles((theme) => ({
 export const Login = (props) => {
   // let history = useHistory();
   const classes = useStyles();
-  const [loginId, setLoginId] = useState("Hello World");
+  const [loginId, setLoginId] = useState("heeye");
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleChange = (e) => {
     setLoginId(() => e.target.value);
@@ -48,7 +64,6 @@ export const Login = (props) => {
               label="Password"
               type="password"
               autoComplete="current-password"
-              
             />
           </Container>
         </div>
@@ -62,6 +77,66 @@ export const Login = (props) => {
         >
           LOGIN
         </Button>
+      </Container>
+      <Container className="join">
+        <IconButton color="secondary" onClick={handleClickOpen}>
+          <PersonAddIcon />
+        </IconButton>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">
+            Initial Registration✨
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              To use this website, please enter your information here.
+            </DialogContentText>
+            <TextField
+              // autoFocus
+              margin="dense"
+              id="id"
+              label="Shinhan ID"
+              placeholder="행번"
+              fullWidth
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="name"
+              placeholder="이름"
+              fullWidth
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="department"
+              label="department"
+              placeholder="부서"
+              fullWidth
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="team"
+              label="team (optional)"
+              placeholder="팀"
+              fullWidth
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="secondary">
+              Join
+            </Button>
+            <Button onClick={handleClose} color="secondary">
+              Cancel
+            </Button>
+          </DialogActions>
+        </Dialog>
+        Have you never used it? Click this to register your information.
       </Container>
     </Container>
   );

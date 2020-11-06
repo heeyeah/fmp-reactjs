@@ -42,7 +42,7 @@ export const MenuNav = (props) => {
 
   return (
     <>
-    <Header header="에러해결해Dream" isTitle > </Header>
+    <Header header="What error is this?" isTitle > </Header>
     <div className="root">
       <Box className="profile">{profileText}</Box>
       <List component="nav" aria-label="main mailbox folders">
@@ -50,7 +50,7 @@ export const MenuNav = (props) => {
         <ListItemLink to="/about" primary="사용법" icon={<MenuBookIcon/>}></ListItemLink>
         <ListItemLink to="/chatBot" primary="챗봇" icon={<QuestionAnswerIcon/>}></ListItemLink>
         <ListItemLink to="/history" primary="히스토리" icon={<TimelineIcon/>}></ListItemLink>
-        <ListItemLink to="/answer" primary="답변등록" icon={<AddCommentIcon/>}></ListItemLink>
+        <ListItemLink to="/answer" primary="질문/답변 등록" icon={<AddCommentIcon/>}></ListItemLink>
       </List>
     </div></>
   );

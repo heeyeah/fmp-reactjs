@@ -3,12 +3,15 @@
 .login {
   height: $fmp-common-height;
   box-sizing: border-box;
-  padding: 5em;
+  padding: 7em 0 5em 0;
   align-items: center;
   text-align: center;
   font-size: 30px;
   font-weight: 500;
   .button {
       padding: 1em;
+  }
+  .join {
+    font-size: 14px;
   }
 }
