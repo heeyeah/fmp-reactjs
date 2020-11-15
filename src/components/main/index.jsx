@@ -5,19 +5,17 @@ import About from "../../pages/About";
 import ChatBot from "../../pages/ChatBot";
 import History from "../../pages/History";
 import Answer from "../../pages/Answer";
-import Grid from "@material-ui/core/Grid";
-import { MenuNav } from "../menu";
 
 export const Main = (props) => {
 
   return (
     <Router>
-      <Grid container spacing={0}>
+      {/* <Grid container spacing={0}>
         <Grid item xs={4} sm={3} md={3} lg={2}>
           <MenuNav loginId={props.loginId}/>
         </Grid>
 
-        <Grid item xs={8} sm={9} md={9} lg={10}>
+        <Grid item xs={8} sm={9} md={9} lg={10}> */}
           <Switch>
             <Route exact path="/home" component={Home} />
             <Route path="/about" component={About} />
@@ -25,8 +23,8 @@ export const Main = (props) => {
             <Route path="/history" component={History} />
             <Route path="/answer" component={Answer} />
           </Switch>
-        </Grid>
-      </Grid>
+        {/* </Grid>
+      </Grid> */}
     </Router>
   );
 };

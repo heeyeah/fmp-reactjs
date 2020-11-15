@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Footer } from "./components/footer";
 import { Login } from "./components/login";
-import { Main } from "./components/main";
-import './App.scss';
+import About from "./pages/About";
+import ChatBot from "./pages/ChatBot";
+import History from "./pages/History";
+import Answer from "./pages/Answer";
+import Home from "./pages/Home";
+import "./App.scss";
 
 function App() {
   const [loginId, setLoginId] = useState(null);
@@ -26,8 +30,12 @@ function App() {
         />
         <Route
           path="/home"
-          render={(props) => <Main {...props} loginId={loginId} />}
+          render={(props) => <Home {...props} loginId={loginId} />}
         />
+        <Route path="/about" render={(props) => <About {...props} loginId={loginId} />} />
+        <Route path="/chatBot" render={(props) => <ChatBot {...props} loginId={loginId} />} />
+        <Route path="/history" render={(props) => <History {...props} loginId={loginId} />} />
+        <Route path="/answer" render={(props) => <Answer {...props} loginId={loginId} />} />
       </Switch>
       <Footer />
     </Router>

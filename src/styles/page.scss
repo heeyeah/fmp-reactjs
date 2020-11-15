@@ -17,11 +17,11 @@
 
   .button {
     margin: 20px;
-    background: #162472;
+    background: $theme-home-button;//#CAAD7E;//162472;
     border: 0;
     border-radius: 3;
     box-shadow: 0 3px 5px 2px rgba(131, 144, 166, 0.3);
-    color: white;
+    color: $theme-header-background;//rgb(0, 0, 0);
     height: 40;
     padding: 0 30px;
     font-size: 17px;
@@ -35,6 +35,7 @@
   box-sizing: border-box;
   overflow: auto;
   padding: 1em 1em 0 1em;
+  
 }
 
 
@@ -43,6 +44,7 @@
   box-sizing: border-box;
   overflow: auto;
   padding: 1em 1em 0 1em;
+  
 }
 
 
@@ -51,5 +53,6 @@
   box-sizing: border-box;
   overflow: auto;
   padding: 1em 1em 0 1em;
+  
 }
 

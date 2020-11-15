@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
-import { Container, IconButton, Modal } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { Container, IconButton } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";

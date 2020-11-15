@@ -1,5 +1,5 @@
 import "./index.scss";
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -10,7 +10,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import AddCommentIcon from '@material-ui/icons/AddComment';
-import { Box, Menu, MenuItem } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import { Header } from "../header";
 
 
