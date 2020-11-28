@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import reportWebVitals from "./reportWebVitals";
+import axios from "axios";
 
 const theme = createMuiTheme({
   typography: {
@@ -11,10 +12,9 @@ const theme = createMuiTheme({
   },
 });
 
+axios.defaults.baseURL = 'http://20.41.82.195:8000';
+
 ReactDOM.render(
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
   <MuiThemeProvider theme={theme}>
       <App/>
   </MuiThemeProvider>,
